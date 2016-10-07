@@ -1,0 +1,11 @@
+{
+  "name": "redux-starter",
+  "version": "1.0.0",
+  "description": "A very simple starter project for redux applications",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Terrence Bowman",
+  "license": "ISC"
+}
