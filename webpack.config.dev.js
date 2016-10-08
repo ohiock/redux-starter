@@ -8,12 +8,14 @@ export default {
 	debug: true,
 	noInfo: true,
 	entry: [
-		path.resolve(__dirname, 'src/index.js')
+		'webpack-dev-server/client?http://localhost:3000',
+		'webpack/hot/only-dev-server',
+		'./src/index'
 	],
 	target: 'web',
 	output: {
 		path: path.resolve(__dirname, 'dist'),
-		publicPath: '/',
+		publicPath: '/static/',
 		filename: 'bundle.js'
 	},
 	plugins: [
@@ -21,6 +23,7 @@ export default {
 			'process.env.NODE_ENV': JSON.stringify('development'),
 			__DEV__: true
 		}),
+		new webpack.HotModuleReplacementPlugin(),
 		new webpack.NoErrorsPlugin()
 	],
 	module: {
@@ -35,5 +38,5 @@ export default {
 			{ test: /(\.css|\.scss)$/, loaders: ['style', 'css?sourceMap', 'postcss', 'sass?sourceMap'] }
 		]
 	},
-	postcss: ()=> [autoprefixer]
+	postcss: () => [autoprefixer]
 }
