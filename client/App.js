@@ -7,5 +7,3 @@ export default class App extends Component {
 		);
 	}
 }
-
-module.hot.accept()

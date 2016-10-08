@@ -10,12 +10,12 @@ export default {
 	entry: [
 		'webpack-dev-server/client?http://localhost:3000',
 		'webpack/hot/only-dev-server',
-		'./src/index'
+		path.resolve(__dirname, '../client/index')
 	],
 	target: 'web',
 	output: {
-		path: path.resolve(__dirname, 'dist'),
-		publicPath: '/static/',
+		path: path.resolve(__dirname, '../public'),
+		publicPath: '/',
 		filename: 'bundle.js'
 	},
 	plugins: [
@@ -35,7 +35,7 @@ export default {
 			{ test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=image/svg+xml' },
 			{ test: /\.(jpe?g|png|gif)$/i, loader: 'file?name=[name].[ext]' },
 			{ test: /\.ico$/, loader: 'file?name=[name].[ext]' },
-			{ test: /(\.css|\.scss)$/, loaders: ['style', 'css?sourceMap', 'postcss', 'sass?sourceMap'] }
+			{ test: /(\.css|\.scss)$/, loaders: ['style', 'css?sourceMap', 'postcss'] }
 		]
 	},
 	postcss: () => [autoprefixer]
