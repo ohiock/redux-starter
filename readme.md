@@ -2,6 +2,7 @@
 
 > A very simple starter project for Redux applications
 
+<br><br>
 ## How to use
 
 Clone the project
@@ -21,10 +22,13 @@ Start the Webpack Dev Server
 
 Start developing!
 
+<br><br>
 ## Features
 
+<br><br>
 ## Testing
 
+<br><br>
 ## Packages
 
 ### Development Dependencies
