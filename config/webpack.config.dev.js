@@ -6,6 +6,7 @@ export default {
 		extensions: ['', '.js', '.jsx']
 	},
 	debug: true,
+	devtool: 'source-map',
 	noInfo: true,
 	entry: [
 		'webpack-dev-server/client?http://localhost:3000',
