@@ -1,16 +1,16 @@
-import { take, call } from 'redux-saga/effects';
+import { take, call, put, takeEvery } from 'redux-saga/effects';
 
-import { incrementCounter } from '../actions';
-import Types from '../actions/types';
+import { increment } from '../actions/counterAction';
 
-function* watchCounter() {
+function* counterWatcher() {
   while (true) {
-    yield take(Types.INCREMENT_COUNTER_REQUEST);
-
-    call(counterWorker);
+    yield takeEvery(`${increment}`, counterWorker);
   }
 };
 
 function* counterWorker() {
-  put(Types.INCREMENT_COUNTER_REQUEST);
+  yield call(delay, 1000);
+  yield put(increment());
 };
+
+export default counterWatcher;

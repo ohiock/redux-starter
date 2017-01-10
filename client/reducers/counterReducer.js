@@ -1,20 +1,15 @@
-import Types from '../actions/types';
-import { createReducer } from 'reduxsauce';
+import { createReducer } from 'redux-act';
 
-export const INITIAL_STATE = {
-  count: 0
+import { increment, incrementIfOdd, decrement } from '../actions/counterAction';
+
+const initialState = {
+  counter: 0
 };
 
-const incrementCounter = (state, action) => Object.assign(
-  { },
-  state,
-  {
-    count: state.count + 1
-  }
-);
+const counterReducer = createReducer({
+  [increment]: state => state.counter + 1,
+  [incrementIfOdd]: state => (state.counter % 2 !== 0 ? state.counter + 1 : state.counter),
+  [decrement]: state => state.counter - 1
+}, initialState);
 
-const ACTION_HANDLERS = {
-  [Types.INCREMENT_COUNTER]: incrementCounter
-};
-
-export default createReducer(INITIAL_STATE, ACTION_HANDLERS)
+export default counterReducer;

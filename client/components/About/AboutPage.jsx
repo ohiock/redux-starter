@@ -2,15 +2,17 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
 
-import { incrementCounter } from '../../actions';
+import { increment } from '../../actions/counterAction';
 
 class AboutPage extends React.Component {
   constructor(props) {
     super(props);
+
+    this.handleClick = this.handleClick.bind(this);
   };
 
   handleClick() {
-    this.props.incrementCounter();
+    this.props.increment();
   };
 
   render() {
@@ -27,13 +29,13 @@ class AboutPage extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    count: state.counterState.count
+    count: state.counter
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    incrementCounter: () => dispatch(incrementCounter())
+    increment: () => dispatch(increment())
   };
 };
 

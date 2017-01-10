@@ -4,7 +4,7 @@ import { routerReducer } from 'react-router-redux';
 import counterReducer from './counterReducer';
 
 const rootReducer = combineReducers({
-  counterState: counterReducer,
+  counterReducer,
   routing: routerReducer
 });
 
