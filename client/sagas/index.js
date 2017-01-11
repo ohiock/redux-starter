@@ -1,12 +1,9 @@
-import { takeEvery, delay } from 'redux-saga';
-import { put, fork } from 'redux-saga/effects';
-
-import counterWatcher from './counterSaga';
+import counter from './counterSaga';
 
 function* rootSaga() {
   yield [
-    counterWatcher
+    counter,
   ];
-};
+}
 
 export default rootSaga;

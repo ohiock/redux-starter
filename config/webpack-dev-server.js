@@ -1,15 +1,17 @@
-import webpack from 'webpack';
-import WebpackDevServer from 'webpack-dev-server';
+import webpack from 'webpack'; // eslint-disable-line
+import WebpackDevServer from 'webpack-dev-server'; // eslint-disable-line
 
 import config from './webpack.config.dev';
 
 new WebpackDevServer(webpack(config), {
-	publicPath: config.output.publicPath,
-	historyApiFallback: true
-}).listen(3000, 'localhost', function (error, result) {
-	if (error) {
-		return console.log(error);
-	}
+  publicPath: config.output.publicPath,
+  historyApiFallback: true,
+}).listen(3000, 'localhost', (error) => {
+  if (error) {
+    console.log(error);
 
-	console.log('Listening at http://localhost:3000/');
+    return;
+  }
+
+  console.log('Listening at http://localhost:3000/');
 });
