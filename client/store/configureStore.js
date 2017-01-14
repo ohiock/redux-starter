@@ -1,19 +1,21 @@
 import { createStore, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
+import createLogger from 'redux-logger';
 
 import rootReducer from '../reducers';
-import rootSaga from '../sagas';
+import counterWatcher from '../sagas/counterSaga';
 
 export default function configureStore(initialState) {
   const sagaMiddleware = createSagaMiddleware();
+  const loggerMiddleware = createLogger();
 
   const store = createStore(
     rootReducer,
     initialState,
-    applyMiddleware(sagaMiddleware),
+    applyMiddleware(sagaMiddleware, loggerMiddleware),
   );
 
-  sagaMiddleware.run(rootSaga);
+  sagaMiddleware.run(counterWatcher);
 
   if (module.hot) {
     module.hot.accept('../reducers', () => {

@@ -7,7 +7,7 @@ const initialState = {
 };
 
 const counterReducer = createReducer({
-  [increment]: state => state.counter + 1,
+  [increment]: state => ({ counter: state.counter + 1 }),
   [incrementIfOdd]: state => (state.counter % 2 !== 0 ? state.counter + 1 : state.counter),
   [decrement]: state => state.counter - 1,
 }, initialState);
