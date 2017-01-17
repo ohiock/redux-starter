@@ -19,38 +19,10 @@ Start the Webpack Dev Server
 Start developing!
 
 ## Features
-
-## Testing
-
-## Packages
-
-### Development Dependencies
-
-Package|Description
----|---
-react|-
-react-dom|-
-react-router|-
-react-router-redux|-
-redux|-
-redux-saga|-
-
-### Dependencies
-
-Package|Description
----|---
-autoprefixer|-
-babel-cli|-
-babel-core|-
-babel-loader|-
-babel-preset-es2015|-
-babel-preset-react|-
-babel-preset-stage-0|-
-css-loader|-
-file-loader|-
-postcss-loader|-
-react-hot-loader|-
-style-loader|-
-url-loader|-
-webpack|-
-webpack-dev-server|-
+This project uses **React** and **Redux** (duh). Also includes:
+- [redux-logger](https://github.com/evgenyrodionov/redux-logger) Logging
+- [redux-act](https://github.com/pauldijou/redux-act) Action and reducer creation (uses actions themselves as ref in reducers vs string constants)
+- [redux-saga](https://github.com/redux-saga/redux-saga) Side effect handling
+- [babel](https://github.com/babel/babel) Compiler for all the new JS hotness
+- [eslint](https://github.com/eslint/eslint) Finds and reports patterns to increase code quality
+- [webpack](https://github.com/webpack/webpack) Bundling (plus hot-reloading development w/ webpack-dev-server)
