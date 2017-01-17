@@ -5,7 +5,7 @@ const App = props => (
   <div>
     <ul>
       <li><IndexLink to="/">Home</IndexLink></li>
-      <li><Link to="/about">About</Link></li>
+      <li><Link to="/counter">Counter</Link></li>
     </ul>
     <br />
     { props.children }
