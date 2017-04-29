@@ -20,6 +20,8 @@ Start developing!
 
 ## Features
 This project uses **React** and **Redux** (duh). Also includes:
+- [jest](https://github.com/facebook/jest) Testing
+- [react-test-renderer](https://github.com/facebook/react/tree/master/packages/react-test-renderer) Renders React components for testing
 - [redux-logger](https://github.com/evgenyrodionov/redux-logger) Logging
 - [redux-act](https://github.com/pauldijou/redux-act) Action and reducer creation (uses actions themselves as ref in reducers vs string constants)
 - [redux-saga](https://github.com/redux-saga/redux-saga) Side effect handling
