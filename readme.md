@@ -1,6 +1,6 @@
 # Redux Starter
 
-> A very simple starter project for Redux applications
+> An old, very simple starter project for Redux applications
 
 ## How to use
 
